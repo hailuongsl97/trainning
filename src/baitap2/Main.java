@@ -21,12 +21,12 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // khởi tạo class xử lý nhiệm vụ
         Filter filter = new Filter();
 
-
+        // đọc từ bàn phím
         Scanner sc = new Scanner(System.in);
-
+        // biến lựa chọn chức năng
         int option = -1;
 
         do {
@@ -35,11 +35,11 @@ public class Main {
                     + " \n 3: Tìm kiếm các từ dựa vào các chữ cái đầu tiên."
                     + " \n 4: Nhập 0 để kết thúc chương trình"
             );
-
+            
             option = sc.nextInt();
             switch (option) {
 
-                case 1: {
+                case 1: {// Hiển thị tổng số từ trong file và danh sách số lần xuất hiện của các từ
                     HashMap<String, Integer> hMap = filter.countWord();
                     Set<String> keySet = hMap.keySet();
                     for (String key : keySet) {
@@ -48,7 +48,7 @@ public class Main {
 
                     break;
                 }
-                case 2: {
+                case 2: {// sắp xếp các từ
                     ArrayList<HashMap.Entry<String, Integer>> listWords = filter.sortWord();
 
                     for (int i = 0; i < listWords.size(); i++) {
@@ -57,7 +57,7 @@ public class Main {
 
                     break;
                 }
-                case 3: {
+                case 3: {// tìm kiếm
                     sc.nextLine();
                     String keyword = "";
                     do {
